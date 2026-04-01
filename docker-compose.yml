@@ -18,7 +18,7 @@ services:
 
     restart: always
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot","-proot"]
+      test: ["CMD", "mysql", "-h", "localhost", "-uroot", "-proot", "-e", "SELECT 1"]
       interval: 10s
       timeout: 5s
       retries: 5
